@@ -9,15 +9,15 @@ type CatImageProps = {
 };
 
 export function CatImage({ url }: CatImageProps) {
-    const [imageUrl, setImageUrl] = useState(url);
+  const [imageUrl, setImageUrl] = useState<string>(url);
 
-    const refreshImage = async () => {
+  const refreshImage = async () => {
     setImageUrl(""); // 初期化
     const image = await fetchImage();
     setImageUrl(image.url);
   };
 
- 
+
   return (
     <div className={styles.page}>
       <button onClick={refreshImage} className={styles.button}>
